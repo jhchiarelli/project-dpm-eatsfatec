@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "468501230543",
+    "project_id": "pdm-fatec-eats",
+    "storage_bucket": "pdm-fatec-eats.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468501230543:android:f5df688c65a53d570298ba",
+        "android_client_info": {
+          "package_name": "br.gov.sp.fatec.ifoodrestaurant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTo4OFSVm_CL0u9xTrOWwWyVEEj17uLHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

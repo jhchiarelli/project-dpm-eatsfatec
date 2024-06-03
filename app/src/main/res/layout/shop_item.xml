@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="2dp"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_shop"
+        android:layout_width="80dp"
+        android:padding="4dp"
+        android:scaleType="centerCrop"
+        android:layout_height="80dp"
+        app:strokeColor="@color/red_light"
+        app:strokeWidth="3dp"
+        app:shapeAppearanceOverlay="@style/rounded_shop"
+        android:src="@drawable/img_pizzeria"/>
+
+    <TextView
+        android:id="@+id/tv_shop"
+        android:text="Mão na Roda"
+        android:paddingVertical="8dp"
+        android:lines="2"
+        android:maxWidth="70dp"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

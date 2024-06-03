@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EatsConsumer" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary branding color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- Darker variant for status bar and context elements -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- Accent color for controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.EatsConsumer" parent="Base.Theme.EatsConsumer" />
+    <style name="ThemeProgressBar" parent="Theme.EatsConsumer">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="rounded_shop">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
