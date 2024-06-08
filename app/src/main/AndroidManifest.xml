@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EatsConsumer"
         tools:targetApi="31">
         <activity
+            android:name=".descricao_produto"
+            android:exported="false" />
+        <activity
+            android:name=".listagemProduto"
+            android:exported="false" />
+        <activity
             android:name=".activity.rating.RatingActivity"
             android:exported="false" />
         <activity
