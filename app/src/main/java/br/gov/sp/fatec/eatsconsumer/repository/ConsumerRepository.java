@@ -46,9 +46,6 @@ public class ConsumerRepository {
 
     public Task<QuerySnapshot> getConsumerLogged(String id) {
         return collection.whereEqualTo("idUser", id).get();
-//        Query qry = collection.whereEqualTo("idUser", id);
-//        return qry.get();
-//        return qry.limit(1).get();
     }
 
     public void updateRestaurant(Consumer consumer, OnSuccessListener<Void> onSuccessListener, OnFailureListener onFailureListener) {
