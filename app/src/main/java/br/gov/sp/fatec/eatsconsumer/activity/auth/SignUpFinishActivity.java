@@ -19,7 +19,7 @@ import br.gov.sp.fatec.eatsconsumer.MainActivity;
 import br.gov.sp.fatec.eatsconsumer.R;
 import br.gov.sp.fatec.eatsconsumer.databinding.ActivitySignUpFinishBinding;
 import br.gov.sp.fatec.eatsconsumer.databinding.ProgressDialogBinding;
-import br.gov.sp.fatec.eatsconsumer.model.Consumer;
+import br.gov.sp.fatec.eatsconsumer.models.Consumer;
 import br.gov.sp.fatec.eatsconsumer.repository.ConsumerRepository;
 import br.gov.sp.fatec.eatsconsumer.tasks.AsyncTaskExecutor;
 import br.gov.sp.fatec.eatsconsumer.utils.PhoneNumberTextWatcher;
@@ -165,7 +165,7 @@ public class SignUpFinishActivity extends AppCompatActivity {
         @Override
         protected Consumer doInBackground(String... strings) {
             String userId = strings[0];
-            Task<DocumentSnapshot> task = consumerRepository.getRestaurant(userId);
+            Task<DocumentSnapshot> task = consumerRepository.getConsumerUser(userId);
             while (!task.isComplete()) {
                 // Aguardando ser completado
             }

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,14 +30,16 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/btAdress"
+                    android:id="@+id/btAdressUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_weight="0"
                     android:background="@color/transparent"
                     android:drawableRight="@drawable/ic_keyboard_arrow_down_24"
-                    android:text="Rua Abc do Zé da Manga"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Sua localização"
                     android:textColor="@color/color_text_title"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -70,6 +78,8 @@
                     android:textColor="@color/color_text_title"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:text="Olá, bem vindo" />
 
                 <View
@@ -139,9 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="16dp"
-                        android:foreground="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:focusable="true">
+                        android:foreground="?attr/selectableItemBackground">
 
                         <TextView
                             android:id="@+id/tvTitle"
@@ -221,197 +229,47 @@
             </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- Outras Lojas -->
-            <HorizontalScrollView
-                android:scrollbars="none"
-                android:clipToPadding="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+            <!-- Categories-->
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:orientation="horizontal"
-                android:layout_marginVertical="6dp">
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
+                <ProgressBar
+                    android:id="@+id/progressBarCategory"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="0"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="@color/white_light"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/imgFarm"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/img_farmacia"
-                            android:contentDescription="Card Item"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:textAlignment="center"
-                            android:text="Farmácias"
-                            android:textSize="15sp"
-                            android:textColor="@color/color_text_title" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Bebidas -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_categories"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="0"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="@color/white_light"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/imgBebidas"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/img_bebidas"
-                            android:contentDescription="Card Item"/>
-
-                        <TextView
-                            android:id="@+id/tvBebidas"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:textAlignment="center"
-                            android:text="Bebidas"
-                            android:textSize="15sp"
-                            android:textColor="@color/color_text_title" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Pet Shop-->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="0"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="@color/white_light"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/imgPetShop"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/img_pet"
-                            android:contentDescription="Card Item"/>
-
-                        <TextView
-                            android:id="@+id/tvPet"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:textAlignment="center"
-                            android:text="Pet Shop"
-                            android:textSize="15sp"
-                            android:textColor="@color/color_text_title" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Pet Shop-->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="0"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="@color/white_light"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/imgShopping"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/img_floreseperfume"
-                            android:contentDescription="Card Item"/>
-
-                        <TextView
-                            android:id="@+id/tvShopping"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:textAlignment="center"
-                            android:text="Shopping"
-                            android:textSize="15sp"
-                            android:textColor="@color/color_text_title" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:orientation="horizontal"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/category_vh"
+                    android:visibility="visible"/>
             </LinearLayout>
-            </HorizontalScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_banners"
-                    android:clipToPadding="false"
-                    android:layout_marginTop="12dp"
-                    android:layout_width="match_parent"
+                <ProgressBar
+                    android:id="@+id/progressBarPublicity"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/card_banner"
-                    tools:itemCount="1"/>
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_publicity"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp" />
 
             </LinearLayout>
 
@@ -429,7 +287,7 @@
                     android:textColor="@color/color_text_title"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    android:text="Últimas lojas" />
+                    android:text="Últimos restaurantes" />
             </LinearLayout>
 
             <LinearLayout
@@ -439,14 +297,14 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_lojas"
+                    android:id="@+id/rv_restaurants"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:orientation="horizontal"
                     android:clipToPadding="false"
-                    tools:orientation="horizontal"
-                    tools:listitem="@layout/shop_item"
+                    tools:orientation="vertical"
+                    tools:listitem="@layout/restaurant_vh"
                     tools:itemCount="1"/>
 
             </LinearLayout>
@@ -515,33 +373,30 @@
                     tools:itemCount="1"/>
 
             </LinearLayout>
-
         </LinearLayout>
-
-
-
     </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    <!--
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        app:elevation="4dp"
+        app:itemIconSize="24dp"
+        app:itemIconTint="#353535"
+        app:itemTextColor="#353535"
+        app:itemRippleColor="@android:color/darker_gray"
+        app:itemActiveIndicatorStyle="@color/gray_light"
+        app:itemPaddingTop="8dp"
+        app:itemPaddingBottom="8dp"
+        app:labelVisibilityMode="selected"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="4dp"
+        android:background="@drawable/bg_rounded"
+        app:menu="@menu/bottom_nav_menu" />
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:backgroundTint="#f6f6f6"
-            android:id="@+id/app_bar"
-            app:fabCradleMargin="8dp"
-            app:fabCradleRoundedCornerRadius="50dp"
-            app:fabCradleVerticalOffset="6dp">
-        </com.google.android.material.bottomappbar.BottomAppBar>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    -->
-
-
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

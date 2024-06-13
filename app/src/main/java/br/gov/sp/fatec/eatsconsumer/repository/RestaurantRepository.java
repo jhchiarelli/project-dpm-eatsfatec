@@ -8,51 +8,43 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import br.gov.sp.fatec.eatsconsumer.models.Consumer;
+import br.gov.sp.fatec.eatsconsumer.models.Restaurant;
 
-public class ConsumerRepository {
+public class RestaurantRepository {
     private FirebaseFirestore db;
     private CollectionReference collection;
-    private static final String COLLECTION_NAME = "consumers";
+    private static final String COLLECTION_NAME = "restaurants";
 
-    public ConsumerRepository() {
-        this.db = FirebaseFirestore.getInstance();
-        this.collection = db.collection(COLLECTION_NAME);
+    public RestaurantRepository() {
+        db = FirebaseFirestore.getInstance();
+        collection = db.collection(COLLECTION_NAME);
     }
 
-    public void addUser(Consumer consumer, OnSuccessListener<DocumentReference> onSuccessListener, OnFailureListener onFailureListener) {
-        collection.add(consumer)
+    public void addUser(Restaurant restaurant, OnSuccessListener<DocumentReference> onSuccessListener, OnFailureListener onFailureListener) {
+        collection.add(restaurant)
                 .addOnSuccessListener(onSuccessListener)
                 .addOnFailureListener(onFailureListener);
     }
 
-    public void setRestaurant(Consumer consumer, OnSuccessListener<Void> onSuccessListener, OnFailureListener onFailureListener) {
-        collection.document().set(consumer)
+    public void setRestaurant(Restaurant restaurant, OnSuccessListener<Void> onSuccessListener, OnFailureListener onFailureListener) {
+        collection.document().set(restaurant)
                 .addOnSuccessListener(onSuccessListener)
                 .addOnFailureListener(onFailureListener);
     }
 
-    public void getConsumer(String userId, OnCompleteListener<QuerySnapshot> onCompleteListener) {
-        collection.whereEqualTo("idUser", userId).get()
+    public void getRestaurant(String userId, OnCompleteListener<DocumentSnapshot> onCompleteListener) {
+        collection.document(userId).get()
                 .addOnCompleteListener(onCompleteListener);
     }
 
-    public Task<DocumentSnapshot> getConsumerUser(String id) {
+    public Task<DocumentSnapshot> getRestaurant(String id) {
         return collection.document(id).get();
     }
 
-    public Task<QuerySnapshot> getConsumerLogged(String id) {
-        return collection.whereEqualTo("idUser", id).get();
-//        Query qry = collection.whereEqualTo("idUser", id);
-//        return qry.get();
-//        return qry.limit(1).get();
-    }
-
-    public void updateRestaurant(Consumer consumer, OnSuccessListener<Void> onSuccessListener, OnFailureListener onFailureListener) {
-        collection.document(consumer.getId()).update("name", consumer.getName(), "email", consumer.getEmail(), "phone", consumer.getPhone(), "address", consumer.getAddress(), "level", consumer.getLevel(), "urlImage", consumer.getUrlImage(), "active", consumer.getActive())
+    public void updateRestaurant(Restaurant restaurant, OnSuccessListener<Void> onSuccessListener, OnFailureListener onFailureListener) {
+        collection.document(restaurant.getId()).update("name", restaurant.getName(), "email", restaurant.getEmail(), "phone", restaurant.getPhone(), "address", restaurant.getAddress(), "level", restaurant.getLevel(), "urlImage", restaurant.getUrlImage(), "rating", restaurant.getRating(),  "active", restaurant.getActive())
                 .addOnSuccessListener(onSuccessListener)
                 .addOnFailureListener(onFailureListener);
     }
@@ -77,3 +69,4 @@ public class ConsumerRepository {
                 .addOnCompleteListener(onCompleteListener);
     }
 }
+

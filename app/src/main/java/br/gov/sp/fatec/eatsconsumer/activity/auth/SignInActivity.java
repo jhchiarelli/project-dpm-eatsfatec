@@ -14,7 +14,7 @@ import br.gov.sp.fatec.eatsconsumer.MainActivity;
 import br.gov.sp.fatec.eatsconsumer.R;
 import br.gov.sp.fatec.eatsconsumer.databinding.ActivitySignInBinding;
 import br.gov.sp.fatec.eatsconsumer.databinding.ProgressDialogBinding;
-import br.gov.sp.fatec.eatsconsumer.model.ResAuthModel;
+import br.gov.sp.fatec.eatsconsumer.models.ResAuthModel;
 import br.gov.sp.fatec.eatsconsumer.repository.AuthRepository;
 import br.gov.sp.fatec.eatsconsumer.tasks.AsyncTaskExecutor;
 
@@ -118,7 +118,7 @@ public class SignInActivity extends AppCompatActivity {
             if (result.getUser() != null) {
                 showDashboard();
             } else {
-                Toast.makeText(SignInActivity.this, "Erro ao fazer login, " + result.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "Erro ao fazer login, tente novamente mais tarde " + result.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
 

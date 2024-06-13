@@ -1,10 +1,8 @@
 package br.gov.sp.fatec.eatsconsumer.repository;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-import br.gov.sp.fatec.eatsconsumer.model.ResAuthModel;
+import br.gov.sp.fatec.eatsconsumer.models.ResAuthModel;
 
 public class AuthRepository {
     private final FirebaseAuth firebaseAuth;
