@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import br.gov.sp.fatec.eatsconsumer.MainActivity;
 import br.gov.sp.fatec.eatsconsumer.R;
+import br.gov.sp.fatec.eatsconsumer.activity.subscription.SubscriptionActivity;
 import br.gov.sp.fatec.eatsconsumer.databinding.ActivityConsumerProfileBinding;
 import br.gov.sp.fatec.eatsconsumer.models.Consumer;
 
@@ -38,6 +39,13 @@ public class ConsumerProfileActivity extends AppCompatActivity {
 
         binding.btUserData.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), ConsumerDataActivity.class);
+            intent.putExtra("objConsumer", consumer);
+            startActivity(intent);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        });
+
+        binding.btUserSubscription.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), SubscriptionActivity.class);
             intent.putExtra("objConsumer", consumer);
             startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
