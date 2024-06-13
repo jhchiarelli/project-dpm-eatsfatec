@@ -74,7 +74,7 @@ public class SignUpFinishActivity extends AppCompatActivity {
     private void addConsumer(String idUser, String nome, String email, String fone, String endereco, String urlImage) {
         Log.i(TAG_SCREEN, "addConsumer");
         Consumer user = new Consumer(nome, email, fone, endereco,  "consumer", urlImage, true, idUser);
-        new AddRestaurantTask().execute(user);
+        new AddUserConsumerTask().execute(user);
     }
 
     private void showDashboard() {
@@ -83,7 +83,7 @@ public class SignUpFinishActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
-    private class AddRestaurantTask extends AsyncTaskExecutor<Consumer, Void, Boolean> {
+    private class AddUserConsumerTask extends AsyncTaskExecutor<Consumer, Void, Boolean> {
         @Override
         protected void onPreExecute() {
             showProgressDialog();
@@ -100,7 +100,7 @@ public class SignUpFinishActivity extends AppCompatActivity {
                     documentReference -> {
                         handler.post(() -> {
                             if (documentReference != null && documentReference.getId() != null) {
-                                Toast.makeText(SignUpFinishActivity.this, "User added with ID: " + documentReference.getId(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(SignUpFinishActivity.this, "User added with ID: " + documentReference.getId(), Toast.LENGTH_SHORT).show();
                                 result[0] = true;
                             } else {
                                 Toast.makeText(SignUpFinishActivity.this, "Error adding user", Toast.LENGTH_SHORT).show();

@@ -129,6 +129,7 @@
                                     android:gravity="center">
 
                                     <TextView
+                                        android:id="@+id/tvSubscriptionName"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:textSize="16sp"
@@ -138,6 +139,7 @@
 
 
                                     <TextView
+                                        android:id="@+id/tvSubscriptionPrice"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="12dp"
