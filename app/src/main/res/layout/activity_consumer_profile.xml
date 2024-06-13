@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_light"
+    tools:context=".activity.consumer.ConsumerProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="12dp">
+
+            <ImageView
+                android:id="@+id/ivUserPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="56dp"
+                android:layout_weight="0"
+                android:contentDescription="Foto do usuário"
+                android:background="@color/purple_background"
+                android:src="@drawable/ico_person_24">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvNameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/color_text_default"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Nome do usuário" />
+
+            <ImageButton
+                android:id="@+id/btBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:backgroundTint="@color/white_light"
+                app:tint="@color/red_dark"
+                android:src="@drawable/ic_arrow_left_24"
+                android:contentDescription="Voltar">
+            </ImageButton>
+
+        </LinearLayout>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            layout="@layout/divisor_grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="18dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btUserData"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/transparent"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textColor="@color/color_text_title"
+                                android:textAlignment="textStart"
+                                android:textSize="16sp"
+                                android:text="Meus dados"
+                                android:drawableRight="@drawable/ic_arrow_right_24"
+                                android:foreground="?attr/selectableItemBackground" />
+
+                            <Button
+                                android:id="@+id/btUserPayment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/transparent"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textColor="@color/color_text_title"
+                                android:textAlignment="textStart"
+                                android:textSize="16sp"
+                                android:text="Pagamentos"
+                                android:drawableRight="@drawable/ic_arrow_right_24"
+                                android:foreground="?attr/selectableItemBackground" />
+
+                            <Button
+                                android:id="@+id/btUserSubscription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/transparent"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textColor="@color/color_text_title"
+                                android:textAlignment="textStart"
+                                android:textSize="16sp"
+                                android:text="Assinaturas"
+                                android:drawableRight="@drawable/ic_arrow_right_24"
+                                android:foreground="?attr/selectableItemBackground" />
+
+                            <Button
+                                android:id="@+id/btUserEatsCupoms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/transparent"
+                                android:ellipsize="end"
+                                android:singleLine="true"
+                                android:textColor="@color/color_text_title"
+                                android:textAlignment="textStart"
+                                android:textSize="16sp"
+                                android:text="Clube Eats"
+                                android:drawableRight="@drawable/ic_arrow_right_24"
+                                android:foreground="?attr/selectableItemBackground" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            layout="@layout/divisor_grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <android.widget.Button
+                android:id="@+id/btLogout"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="Sair da conta"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textColor="@color/red_default"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tv_outline"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

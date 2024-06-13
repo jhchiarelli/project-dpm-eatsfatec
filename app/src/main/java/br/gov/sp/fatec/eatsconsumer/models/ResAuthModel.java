@@ -1,4 +1,4 @@
-package br.gov.sp.fatec.eatsconsumer.model;
+package br.gov.sp.fatec.eatsconsumer.models;
 
 import com.google.firebase.auth.FirebaseUser;
 

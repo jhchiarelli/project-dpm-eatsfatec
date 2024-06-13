@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_light"
+    tools:context=".activity.consumer.ConsumerDataActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_default"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Meus dados" />
+
+            <ImageButton
+                android:id="@+id/btBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:backgroundTint="@color/white_light"
+                app:tint="@color/red_dark"
+                android:src="@drawable/ic_arrow_left_24"
+                android:contentDescription="Voltar">
+            </ImageButton>
+        </LinearLayout>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            layout="@layout/divisor_grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="Endereço"
+                    android:layout_marginTop="12dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_text_default"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tvEndereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:padding="16dp"
+                    android:background="@drawable/border_rounded"
+                    android:drawableStart="@drawable/ic_location_pin_24"
+                    android:drawablePadding="16dp"
+                    android:hint="Digite seu endereço"
+                    android:inputType="textCapSentences" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="Telefone"
+                    android:layout_marginTop="12dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_text_default"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tvFone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:padding="16dp"
+                    android:background="@drawable/border_rounded"
+                    android:drawableStart="@drawable/ic_local_phone_24"
+                    android:drawablePadding="16dp"
+                    android:hint="(11) 99999-9999"
+                    android:inputType="numberSigned" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/color_text_default"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="Url do avatar"
+                    android:visibility="gone"/>
+
+                <EditText
+                    android:id="@+id/tvImageUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:padding="16dp"
+                    android:background="@drawable/border_rounded"
+                    android:drawableStart="@drawable/ic_image_24"
+                    android:drawablePadding="16dp"
+                    android:hint="Digite a Url do Avatar"
+                    android:inputType="text"
+                    android:visibility="gone"/>
+
+                <android.widget.Button
+                    android:id="@+id/btUpdateData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="Atualizar dados"
+                    android:background="@drawable/bg_tv"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

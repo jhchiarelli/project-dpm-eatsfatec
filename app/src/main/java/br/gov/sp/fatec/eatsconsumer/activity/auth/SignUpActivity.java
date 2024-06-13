@@ -13,7 +13,7 @@ import android.widget.Toast;
 import br.gov.sp.fatec.eatsconsumer.R;
 import br.gov.sp.fatec.eatsconsumer.databinding.ActivitySignUpBinding;
 import br.gov.sp.fatec.eatsconsumer.databinding.ProgressDialogBinding;
-import br.gov.sp.fatec.eatsconsumer.model.ResAuthModel;
+import br.gov.sp.fatec.eatsconsumer.models.ResAuthModel;
 import br.gov.sp.fatec.eatsconsumer.repository.AuthRepository;
 import br.gov.sp.fatec.eatsconsumer.tasks.AsyncTaskExecutor;
 
@@ -33,10 +33,10 @@ public class SignUpActivity extends AppCompatActivity {
         authRepository = new AuthRepository();
 
         binding.btCreate.setOnClickListener(v -> checkData());
-        binding.btBack.setOnClickListener(v -> showDashboard());
+        binding.btBack.setOnClickListener(v -> showSignIn());
     }
 
-    private void showDashboard() {
+    private void showSignIn() {
         Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

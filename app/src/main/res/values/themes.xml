@@ -10,6 +10,16 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
+    <style name="CustomBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:layout_height">@dimen/bottom_navigation_height</item>
+    </style>
+
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="colorControlActivated">@color/yellow_star</item>
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlHighlight">@color/yellow_star</item>
+    </style>
+
     <style name="Theme.EatsConsumer" parent="Base.Theme.EatsConsumer" />
     <style name="ThemeProgressBar" parent="Theme.EatsConsumer">
         <item name="colorAccent">@color/colorPrimary</item>
